@@ -9,7 +9,6 @@ class Bird {
 	show() {
 		fill(255);
 		circle(this.x, this.y, this.size);
-		
 	}
 
 	update() {
