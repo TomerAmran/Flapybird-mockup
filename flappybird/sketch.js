@@ -1,6 +1,7 @@
 var bird;
 let canvas;
 var blocks;
+var score;
 
 function setup() {
   	canvas = createCanvas(300, 500);
@@ -23,6 +24,7 @@ function setup() {
   }
 
   function resetGame() {
+  	score = 0;
   	bird = new Bird();
   	blocks = [];
 	loop();
@@ -45,7 +47,12 @@ function draw() {
   		if (blocks[i].offscrean()) {
   			blocks.splice(i,1);
   		}
+  		if (blocks[i].passed()) {
+  			score++;
+  		}
+
 	}
+	showScore();
 	collisionChecker();
 }
 
@@ -75,5 +82,10 @@ function gameover() {
 	textSize(30);
 	text('press Enter to restart game', width/6, height/2+60, width*12/13, height);
 	noLoop();
-f
+}
+
+function showScore() {
+	textSize (30);
+	fill(0);
+	text ('Score:' + score , 30, 30);
 }
