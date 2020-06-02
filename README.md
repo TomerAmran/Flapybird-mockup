@@ -1,2 +1,2 @@
-# p5js_sketch
-trying to host p5 with github pages
+Flappybird mockup based on p5js library
+https://tomeramran.github.io/Flapybird-mockup/
